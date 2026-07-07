@@ -1,36 +1,66 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# PIace
 
-## Getting Started
+Marketing website for **PIace** — AI-native case management built for personal injury law firms. Intake, medical chronologies, demand letters, deadlines, client texting and settlement tracking, with AI agents working inside every stage of the case.
 
-First, run the development server:
+Live site: [piace.ai](https://piace.ai)
+
+## Tech stack
+
+- [Next.js](https://nextjs.org/) (App Router)
+- React + TypeScript
+- Plain CSS (custom design system in `app/globals.css`)
+- Framer Motion for a few interactions
+
+## Getting started
+
+Install dependencies and run the dev server:
 
 ```bash
+npm install
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Open [http://localhost:3000](http://localhost:3000) in your browser.
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+Other scripts:
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+```bash
+npm run build    # production build
+npm run start    # run the production build
+npm run lint     # lint the project
+```
 
-## Learn More
+## Project structure
 
-To learn more about Next.js, take a look at the following resources:
+```
+app/
+  layout.tsx        Root layout, fonts, metadata and SEO
+  page.tsx          Home page — assembles the sections
+  globals.css       Design system and all component styles
+  manifest.ts       Web app manifest (PWA)
+  robots.ts         robots.txt
+  sitemap.ts        sitemap.xml
+components/
+  Navbar, Hero, ProductSection, IntegrateSection,
+  FeatureSection, MigrationBand, DemoSection, Faq,
+  BookSection, Footer, and shared helpers
+public/             Logo, icons and static assets
+```
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+## Sections
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+The home page is composed of self-contained section components: a hero with an
+animated starfield, the product overview, the case workflow, the feature grid, a
+migration call-out, an interactive product demo, FAQs, a booking form and the
+footer.
 
-## Deploy on Vercel
+## To do before launch
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+- Connect the "Book a call" form to the scheduler (Calendly / Cal.com).
+- Drop in the real product walkthrough video in the demo section, if available.
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+## Deployment
+
+The site is a standard Next.js app and deploys cleanly to Vercel. Push to the
+connected branch and Vercel builds automatically, or run `npm run build` and host
+the output anywhere that supports Node.
