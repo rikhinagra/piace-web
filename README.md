@@ -2,7 +2,7 @@
 
 Marketing website for **PIace** — AI-native case management built for personal injury law firms. Intake, medical chronologies, demand letters, deadlines, client texting and settlement tracking, with AI agents working inside every stage of the case.
 
-Live site: [piace.ai](https://piace.ai)
+Live site: **[www.piace.ai](https://www.piace.ai)**
 
 ## Tech stack
 
