@@ -18,7 +18,7 @@ const instrumentSerif = Instrument_Serif({
 
 const TITLE = "PIace | AI-native case management for personal injury firms";
 const DESCRIPTION =
-  "Case management for personal injury firms with AI built into every step: intake, medical chronologies, demand letters, deadlines. Built AI-native, not bolted on.";
+  "AI-native case management for personal injury firms. Intake, medical chronologies, demand letters and deadlines, with AI inside every step.";
 
 export const metadata: Metadata = {
   metadataBase: new URL(SITE_URL),
