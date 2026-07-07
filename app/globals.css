@@ -23,6 +23,11 @@ html {
   scroll-behavior: smooth;
 }
 
+/* hard-stop any horizontal panning on touch devices */
+html {
+  overflow-x: hidden;
+}
+
 body {
   background: var(--bg);
   color: var(--text);
@@ -31,6 +36,18 @@ body {
   line-height: 1.6;
   -webkit-font-smoothing: antialiased;
   overflow-x: hidden;
+}
+
+@supports (overflow-x: clip) {
+  html,
+  body {
+    overflow-x: clip;
+  }
+}
+
+/* main clips wide decorative layers (e.g. page-end glow) */
+main {
+  overflow-x: clip;
 }
 
 h1,
@@ -452,7 +469,8 @@ section {
   color: var(--text);
   display: flex;
   align-items: center;
-  gap: 8px;
+  flex-wrap: wrap;
+  gap: 4px 8px;
 }
 
 .badge-up,
@@ -490,7 +508,21 @@ section {
   display: flex;
   align-items: center;
   justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 6px 12px;
   margin-bottom: 6px;
+}
+
+/* let grid/flex children shrink below content width (prevents card overflow) */
+.stat,
+.panel,
+.dash-main > *,
+.side-col > *,
+.stat-row > *,
+.prod-grid > *,
+.demo-stage,
+.demo-pane > * {
+  min-width: 0;
 }
 
 .panel .p-title {
@@ -1203,6 +1235,14 @@ footer {
   font-family: "Satoshi", sans-serif;
   font-size: 13px;
   color: var(--muted);
+  min-width: 0;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.demo-live {
+  flex-shrink: 0;
 }
 
 .demo-live {
@@ -1546,6 +1586,19 @@ footer {
     padding: 0 20px;
   }
 
+  .dashboard {
+    padding: 14px;
+  }
+
+  .stat-row,
+  .dash-main {
+    gap: 10px;
+  }
+
+  .panel {
+    padding: 14px;
+  }
+
   .nav-logo img {
     height: 26px;
   }
@@ -1583,19 +1636,35 @@ footer {
     grid-template-columns: 1fr;
   }
 
+  /* all three stage tabs fit side by side — nothing scrolls off-screen */
   .demo-steps {
     flex-direction: row;
+    gap: 6px;
+    padding: 12px;
     border-right: none;
     border-bottom: 1px solid var(--line-soft);
-    overflow-x: auto;
   }
 
   .demo-step {
-    flex-shrink: 0;
+    flex: 1;
+    min-width: 0;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 6px;
+    padding: 10px 12px;
+  }
+
+  .demo-step .n {
+    font-size: 15px;
+  }
+
+  .demo-step .l {
+    font-size: 13px;
+    width: 100%;
   }
 
   .demo-step .prog {
-    width: 60px;
+    width: 100%;
   }
 
   .demo-stage {
