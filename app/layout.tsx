@@ -2,7 +2,7 @@ import type { Metadata, Viewport } from "next";
 import { Inter, Instrument_Serif } from "next/font/google";
 import "./globals.css";
 
-const SITE_URL = "https://piace.ai";
+const SITE_URL = "https://www.piace.ai";
 
 const inter = Inter({
   variable: "--font-inter",
