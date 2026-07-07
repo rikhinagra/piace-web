@@ -164,6 +164,10 @@ export default function Hero() {
     <section className="hero">
       <Starfield />
       <div className="wrap" style={{ position: "relative" }}>
+        <Reveal>
+          <p className="hero-eyebrow">AI-native case management</p>
+        </Reveal>
+
         <Reveal delay={100}>
           <h1>
             Built for PI.{" "}
