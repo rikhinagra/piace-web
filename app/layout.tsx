@@ -102,22 +102,37 @@ export default function RootLayout({
           dangerouslySetInnerHTML={{
             __html: JSON.stringify({
               "@context": "https://schema.org",
-              "@type": "SoftwareApplication",
+              "@type": ["SoftwareApplication", "Organization"],
               name: "PIace",
-              applicationCategory: "BusinessApplication",
-              applicationSubCategory: "Legal Case Management",
-              operatingSystem: "Web",
-              description: DESCRIPTION,
+              alternateName: "PIace.ai",
+              description:
+                "AI-native case management software built for personal injury law firms. Intake, medical chronologies, demand letters, deadlines, client texting, and settlement tracking with AI agents inside every stage.",
               url: SITE_URL,
+              image: `${SITE_URL}/opengraph-image.png`,
+              applicationCategory: "LegalTech",
+              operatingSystem: "Web",
+              parentOrganization: {
+                "@type": "Organization",
+                name: "SACHHSOFT",
+                url: "https://www.sachhsoft.com",
+              },
               audience: {
                 "@type": "Audience",
-                audienceType: "Personal injury law firms",
+                audienceType: "Personal Injury Law Firms",
               },
-              publisher: {
-                "@type": "Organization",
-                name: "PIace",
-                url: SITE_URL,
-              },
+              featureList: [
+                "AI Intake Agent — qualifies and scores leads 24/7 via web, phone, and text",
+                "Medical Chronology AI — turns hundreds of pages of records into an annotated, sourced timeline",
+                "Demand Drafter AI — generates demand letters in the firm voice across 7 PI demand types",
+                "Deadline Watch — tracks every statute of limitations and case deadline automatically",
+                "Settlement Tracking — offers, negotiations, lien resolution, and disbursement end to end",
+                "Client Texting — two-way messaging logged to the case file",
+                "E-Sign & Documents — retainers and forms generated, sent, and signed inside the case",
+                "Custom Agents — firm-specific AI agents for bespoke routine workflows",
+              ],
+              sameAs: ["https://www.linkedin.com/company/piaceai"],
+              keywords:
+                "personal injury case management, PI law firm software, AI legal software, medical chronology AI, demand letter AI, CASEpeer alternative, SmartAdvocate alternative, law firm automation",
             }),
           }}
         />
