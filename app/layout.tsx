@@ -1,5 +1,6 @@
 import type { Metadata, Viewport } from "next";
 import { Inter, Instrument_Serif } from "next/font/google";
+import { GoogleTagManager } from "@next/third-parties/google";
 import "./globals.css";
 
 const SITE_URL = "https://www.piace.ai";
@@ -94,6 +95,7 @@ export default function RootLayout({
           rel="stylesheet"
         />
       </head>
+      <GoogleTagManager gtmId="GTM-KTGH9WRC" />
       <body>
         <script
           type="application/ld+json"
