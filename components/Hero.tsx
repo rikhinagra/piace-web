@@ -1,6 +1,7 @@
 import Starfield from "./Starfield";
 import GlowButton from "./GlowButton";
 import Reveal from "./Reveal";
+import ScrollIndicator from "./ScrollIndicator";
 
 const stats = [
   { value: "14,200+", label: "PAGES READ THIS WEEK" },
@@ -11,51 +12,87 @@ const stats = [
 
 export default function Hero() {
   return (
-    <section className="hero">
+    <section className="hero" style={{ padding: 0, overflow: "visible" }}>
       <Starfield />
-      <div className="wrap" style={{ position: "relative" }}>
-        <Reveal>
-          <p
-            className="hero-eyebrow-new"
-            style={{
-              background: "linear-gradient(90deg, #4c8dff 0%, #c084fc 50%, #38bdf8 100%)",
-              WebkitBackgroundClip: "text",
-              backgroundClip: "text",
-              color: "transparent",
-              WebkitTextFillColor: "transparent",
-            }}
-          >
-            AI-NATIVE CASE MANAGEMENT
-          </p>
-        </Reveal>
 
-        <Reveal delay={100}>
-          <h1 className="jakarta">
-            More time to practice <em className="serif-em">law</em>
-            <br />PiAce runs the rest of the case
-          </h1>
-        </Reveal>
+      {/* ── Above fold: fills 100vh ── */}
+      <div
+        style={{
+          minHeight: "100vh",
+          display: "flex",
+          flexDirection: "column",
+          justifyContent: "center",
+          position: "relative",
+          paddingTop: "80px",
+          paddingBottom: "90px",
+          textAlign: "center",
+        }}
+      >
+        <div className="wrap" style={{ position: "relative" }}>
 
-        <Reveal delay={180}>
-          <p className="sub-new">
-            PiAce reads your records, drafts your demands, and watches your
-            deadlines so every case reaches you ready to work, not ready to
-            start.
-          </p>
-        </Reveal>
+          {/* Eyebrow */}
+          <Reveal>
+            <p
+              className="hero-eyebrow-new"
+              style={{
+                background: "linear-gradient(90deg, #4c8dff 0%, #c084fc 50%, #38bdf8 100%)",
+                WebkitBackgroundClip: "text",
+                backgroundClip: "text",
+                color: "transparent",
+                WebkitTextFillColor: "transparent",
+                marginBottom: "clamp(24px, 2.5vw, 32px)",
+              }}
+            >
+              AI-NATIVE CASE MANAGEMENT
+            </p>
+          </Reveal>
 
-        <Reveal delay={260}>
-          <div className="hero-actions" style={{ justifyContent: "center" }}>
-            <GlowButton href="#book">Book a Walkthrough</GlowButton>
-          </div>
-          <p className="hero-migration-note">
-            FREE MIGRATION  WE MOVE YOUR CASES, YOU KEEP PRACTICING
-          </p>
-        </Reveal>
+          {/* Heading */}
+          <Reveal delay={100}>
+            <h1
+              className="jakarta"
+              style={{ marginBottom: "clamp(32px, 3vw, 44px)" }}
+            >
+              More time to practice <em className="serif-em">law</em>
+              <br />PiAce runs the rest of the case
+            </h1>
+          </Reveal>
 
-        <Reveal delay={340}>
+          {/* Subtext */}
+          <Reveal delay={180}>
+            <p
+              className="sub-new"
+              style={{ marginBottom: "clamp(52px, 5vw, 64px)" }}
+            >
+              PiAce reads your records, drafts your demands, and watches your
+              deadlines so every case reaches you ready to work, not ready to
+              start.
+            </p>
+          </Reveal>
+
+          {/* CTA + migration note */}
+          <Reveal delay={260}>
+            <div className="hero-actions" style={{ justifyContent: "center", marginBottom: "clamp(24px, 2vw, 28px)" }}>
+              <GlowButton href="#book">Book a Walkthrough</GlowButton>
+            </div>
+            <p className="hero-migration-note" style={{ marginTop: "clamp(12px, 1.5vw, 20px)" }}>
+              FREE MIGRATION  WE MOVE YOUR CASES, YOU KEEP PRACTICING
+            </p>
+          </Reveal>
+
+        </div>
+
+        {/* Scroll indicator pinned to bottom of viewport */}
+        <ScrollIndicator />
+      </div>
+
+      {/* ── Below fold: video + stats ── */}
+      <div
+        className="wrap"
+        style={{ paddingBottom: "clamp(52px, 6.5vw, 92px)" }}
+      >
+        <Reveal delay={0}>
           <div className="hero-video-wrap">
-            {/* Video box — all corners rounded, purple corner glow */}
             <div
               className="hero-video-box"
               style={{
@@ -82,7 +119,7 @@ export default function Hero() {
               </video>
             </div>
 
-            {/* Stats — separate row below video */}
+            {/* Stats */}
             <div
               style={{
                 display: "flex",
@@ -106,23 +143,31 @@ export default function Hero() {
                         : "none",
                   }}
                 >
-                  <div style={{
-                    fontFamily: "var(--font-inter), sans-serif",
-                    fontWeight: 700,
-                    fontSize: "clamp(22px, 2.4vw, 36px)",
-                    color: "#eef0f3",
-                    lineHeight: 1,
-                    marginBottom: "8px",
-                  }}>{s.value}</div>
-                  <div style={{
-                    fontFamily: "var(--font-inter), sans-serif",
-                    fontWeight: 500,
-                    fontSize: "clamp(9px, 0.75vw, 11px)",
-                    color: "#8a95a0",
-                    letterSpacing: "0.07em",
-                    textTransform: "uppercase",
-                    lineHeight: 1.4,
-                  }}>{s.label}</div>
+                  <div
+                    style={{
+                      fontFamily: "var(--font-inter), sans-serif",
+                      fontWeight: 700,
+                      fontSize: "clamp(22px, 2.4vw, 36px)",
+                      color: "#eef0f3",
+                      lineHeight: 1,
+                      marginBottom: "8px",
+                    }}
+                  >
+                    {s.value}
+                  </div>
+                  <div
+                    style={{
+                      fontFamily: "var(--font-inter), sans-serif",
+                      fontWeight: 500,
+                      fontSize: "clamp(9px, 0.75vw, 11px)",
+                      color: "#8a95a0",
+                      letterSpacing: "0.07em",
+                      textTransform: "uppercase",
+                      lineHeight: 1.4,
+                    }}
+                  >
+                    {s.label}
+                  </div>
                 </div>
               ))}
             </div>
