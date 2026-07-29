@@ -16,7 +16,7 @@ export default function ScrollIndicator() {
     <motion.div
       initial={{ opacity: 0 }}
       animate={{ opacity: visible ? 1 : 0 }}
-      transition={{ duration: 1, delay: visible ? 1.4 : 0 }}
+      transition={{ duration: 0.4, delay: visible ? 0.5 : 0 }}
       style={{
         position: "absolute",
         bottom: "36px",
