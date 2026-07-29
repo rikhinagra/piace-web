@@ -26,9 +26,10 @@ export default function Footer() {
             />
             <p
               style={{
-                fontFamily: "var(--font-inter), sans-serif",
-                fontSize: "clamp(12px, 1vw, 14px)",
-                color: "#6b7a8d",
+                fontFamily: "var(--font-jakarta), sans-serif",
+                fontWeight: 400,
+                fontSize: "13px",
+                color: "#9d9da6",
                 margin: 0,
               }}
             >
@@ -71,9 +72,10 @@ export default function Footer() {
         {/* ── Copyright ── */}
         <p
           style={{
-            fontFamily: "var(--font-inter), sans-serif",
-            fontSize: "clamp(11px, 0.9vw, 13px)",
-            color: "#4a5568",
+            fontFamily: "var(--font-jakarta), sans-serif",
+            fontWeight: 400,
+            fontSize: "12px",
+            color: "#c5cbd3",
             textAlign: "center",
             margin: 0,
             padding: "clamp(18px, 2.5vw, 28px) 0",

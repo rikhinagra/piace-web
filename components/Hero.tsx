@@ -33,13 +33,14 @@ export default function Hero() {
           {/* Eyebrow */}
           <Reveal>
             <p
-              className="hero-eyebrow-new"
               style={{
-                background: "linear-gradient(90deg, #4c8dff 0%, #c084fc 50%, #38bdf8 100%)",
-                WebkitBackgroundClip: "text",
-                backgroundClip: "text",
-                color: "transparent",
-                WebkitTextFillColor: "transparent",
+                display: "inline-block",
+                fontFamily: "var(--font-inter), sans-serif",
+                fontWeight: 600,
+                fontSize: "clamp(12px, 1.4vw, 20px)",
+                letterSpacing: "6px",
+                textTransform: "uppercase",
+                color: "#a484e0",
                 marginBottom: "clamp(24px, 2.5vw, 32px)",
               }}
             >
@@ -50,10 +51,18 @@ export default function Hero() {
           {/* Heading */}
           <Reveal delay={100}>
             <h1
-              className="jakarta"
-              style={{ marginBottom: "20px" }}
+              style={{
+                fontFamily: "var(--font-inter), sans-serif",
+                fontWeight: 800,
+                fontSize: "clamp(30px, 4.2vw, 60px)",
+                color: "#f4f4f5",
+                lineHeight: 1.06,
+                letterSpacing: "-2px",
+                maxWidth: "22ch",
+                margin: "0 auto 20px",
+              }}
             >
-              More time to practice <em className="serif-em">law</em>
+              More time to practice <em className="serif-em" style={{ color: "#eae0fd" }}>law</em>
               <br />PiAce runs the rest of the case
             </h1>
           </Reveal>
@@ -61,8 +70,15 @@ export default function Hero() {
           {/* Subtext */}
           <Reveal delay={180}>
             <p
-              className="sub-new"
-              style={{ marginBottom: "clamp(52px, 5vw, 64px)" }}
+              style={{
+                fontFamily: "var(--font-inter), sans-serif",
+                fontWeight: 400,
+                fontSize: "clamp(15px, 1.67vw, 24px)",
+                color: "#9eaebb",
+                lineHeight: 1.55,
+                maxWidth: "56ch",
+                margin: `0 auto clamp(52px, 5vw, 64px)`,
+              }}
             >
               PiAce reads your records, drafts your demands, and watches your
               deadlines so every case reaches you ready to work, not ready to
@@ -75,7 +91,15 @@ export default function Hero() {
             <div className="hero-actions" style={{ justifyContent: "center", marginBottom: "clamp(24px, 2vw, 28px)" }}>
               <GlowButton href="#book">Book a Walkthrough</GlowButton>
             </div>
-            <p className="hero-migration-note" style={{ marginTop: "clamp(12px, 1.5vw, 20px)" }}>
+            <p style={{
+              fontFamily: "var(--font-inter), sans-serif",
+              fontSize: "14px",
+              fontWeight: 400,
+              letterSpacing: "0.04em",
+              color: "#d2d6dc",
+              textTransform: "uppercase",
+              marginTop: "clamp(12px, 1.5vw, 20px)",
+            }}>
               FREE MIGRATION  WE MOVE YOUR CASES, YOU KEEP PRACTICING
             </p>
           </Reveal>

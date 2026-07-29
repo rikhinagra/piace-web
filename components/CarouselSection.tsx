@@ -30,7 +30,7 @@ function SlideVideo({ src, isActive, onComplete }: { src: string; isActive: bool
       playsInline
       preload="metadata"
       onEnded={onComplete}
-      style={{ width: "100%", height: "100%", objectFit: "contain", display: "block", background: "#07070f" }}
+      style={{ width: "100%", height: "100%", objectFit: "cover", display: "block", background: "#07070f" }}
     />
   );
 }
@@ -71,7 +71,7 @@ const slides = [
   {
     tag: "AI AGENT",
     heading: "Your work doesn't have to wait",
-    body: "Always-on AI that monitors deadlines, auto-generates legal packets, and processes patient updates with 0% latency.",
+    body: "Always on AI that monitors deadlines, auto-generates legal packets, and processes patient updates with 0% latency.",
     note: "Working around the clock, so your team doesn't have to.",
     video: "/lg-05-tasks.mp4",
     duration: 21700,
@@ -140,30 +140,40 @@ export default function CarouselSection() {
       <div className="wrap">
         {/* Header */}
         <div style={{ textAlign: "center", marginBottom: "clamp(28px, 3.5vw, 52px)" }}>
-          <span style={{ display: "inline-block", fontFamily: "var(--font-inter), sans-serif", fontWeight: 600, fontSize: "clamp(10px, 0.85vw, 12px)", letterSpacing: "0.1em", textTransform: "uppercase", color: "#a484e0", marginBottom: "14px" }}>
+          <span style={{ display: "inline-block", fontFamily: "var(--font-inter), sans-serif", fontWeight: 600, fontSize: "clamp(12px, 1.25vw, 18px)", letterSpacing: "6px", textTransform: "uppercase", color: "#a484e0", marginBottom: "14px" }}>
             Lead Generation
           </span>
-          <h2 style={{ fontFamily: "var(--font-jakarta), sans-serif", fontWeight: 800, fontSize: "clamp(24px, 3.2vw, 48px)", color: "#f4f4f5", margin: 0 }}>
-            Turn hours of work into <em className="serif-em">seconds</em>
+          <h2 style={{ fontFamily: "var(--font-inter), sans-serif", fontWeight: 800, fontSize: "clamp(24px, 3.33vw, 48px)", color: "#f4f4f5", margin: 0 }}>
+            Turn hours of work into <em className="serif-em" style={{ color: "#eae0fd" }}>seconds</em>
           </h2>
         </div>
 
-        {/* Mobile */}
+        {/* ── Mobile ── */}
         {isMobile && (
           <div style={{ display: "flex", flexDirection: "column" }}>
             <div
-              style={{ position: "relative", background: "#0e0e14", border: "1px solid rgba(255,255,255,0.08)", borderRadius: "16px", overflow: "hidden" }}
+              style={{ background: "#0e0e14", border: "1px solid rgba(255,255,255,0.08)", borderRadius: "16px", overflow: "hidden" }}
               onPointerDown={onPointerDown} onPointerUp={onPointerUp}
             >
-              <div style={{ aspectRatio: "1", width: "100%", background: "#07070f" }}>
-                <SlideVideo
-                  key={`m-${active}`}
-                  src={slides[active].video}
-                  isActive={true}
-                  onComplete={handleComplete}
-                />
+              <AnimatePresence mode="wait">
+                <motion.div key={active} initial={{ opacity: 0, y: 10 }} animate={{ opacity: 1, y: 0 }} exit={{ opacity: 0, y: -6 }} transition={{ duration: 0.35, ease: "easeOut" }}
+                  style={{ padding: "24px 22px 0" }}>
+                  <span style={{ fontFamily: "var(--font-inter), sans-serif", fontWeight: 600, fontSize: "11px", letterSpacing: "0.1em", textTransform: "uppercase", color: "#a484e0" }}>{slides[active].tag}</span>
+                  <h3 style={{ fontFamily: "var(--font-inter), sans-serif", fontWeight: 700, fontSize: "clamp(20px, 5vw, 28px)", color: "#f4f4f5", lineHeight: 1.15, margin: "8px 0 10px" }}>{slides[active].heading}</h3>
+                  <p style={{ fontFamily: "var(--font-inter), sans-serif", fontWeight: 500, fontSize: "clamp(13px, 3.5vw, 15px)", color: "#7a8895", lineHeight: 1.6, margin: "0 0 12px" }}>{slides[active].body}</p>
+                  <div style={{ background: "rgba(123,95,224,0.13)", borderLeft: "3px solid #7b5fe0", borderRadius: "0 8px 8px 0", padding: "10px 14px", marginBottom: "16px" }}>
+                    <p style={{ fontFamily: "var(--font-inter), sans-serif", fontWeight: 500, fontSize: "clamp(11px, 3vw, 13px)", color: "#c4b5f7", lineHeight: 1.5, margin: 0 }}>{slides[active].note}</p>
+                  </div>
+                </motion.div>
+              </AnimatePresence>
+
+              <div style={{ height: "240px", padding: "0 16px 16px" }}>
+                <div style={{ height: "100%", background: "#07070f", border: "1px solid rgba(255,255,255,0.08)", borderRadius: "12px", overflow: "hidden" }}>
+                  <SlideVideo key={`m-${active}`} src={slides[active].video} isActive={true} onComplete={handleComplete} />
+                </div>
               </div>
-              <div style={{ position: "absolute", bottom: 0, left: 0, right: 0, height: "3px", background: "rgba(255,255,255,0.06)" }}>
+
+              <div style={{ height: "3px", background: "rgba(255,255,255,0.06)" }}>
                 <div style={{ height: "100%", width: `${progress}%`, background: "#7b5fe0", transition: "width 0.04s linear" }} />
               </div>
             </div>
@@ -178,11 +188,11 @@ export default function CarouselSection() {
           </div>
         )}
 
-        {/* Desktop 3D coverflow */}
+        {/* ── Desktop 3D coverflow ── */}
         {!isMobile && (
           <>
             <div
-              style={{ position: "relative", perspective: "1400px", height: "clamp(260px, 48vw, 580px)", overflow: "hidden" }}
+              style={{ position: "relative", perspective: "1400px", height: "clamp(280px, 42vw, 470px)", overflow: "hidden" }}
               onPointerDown={onPointerDown} onPointerUp={onPointerUp}
             >
               {slides.map((slide, i) => {
@@ -197,21 +207,61 @@ export default function CarouselSection() {
                 const zIndex = 10 - abs;
                 return (
                   <motion.div key={i} onClick={() => abs > 0 && setActive(i)}
-                    style={{ position: "absolute", top: 0, left: "50%", width: "clamp(260px, 48vw, 580px)", height: "clamp(260px, 48vw, 580px)", marginLeft: "clamp(-290px, -24vw, -130px)", cursor: abs > 0 ? "pointer" : "default", pointerEvents: abs > 2 ? "none" : "auto", transformStyle: "preserve-3d" }}
+                    style={{
+                      position: "absolute",
+                      top: 0,
+                      left: "50%",
+                      width: "clamp(300px, 72vw, 860px)",
+                      height: "clamp(280px, 42vw, 470px)",
+                      marginLeft: "clamp(-430px, -36vw, -150px)",
+                      cursor: abs > 0 ? "pointer" : "default",
+                      pointerEvents: abs > 2 ? "none" : "auto",
+                      transformStyle: "preserve-3d",
+                    }}
                     animate={{ x: `${xPct}%`, scale, rotateY, opacity, zIndex }}
                     transition={{ type: "spring", stiffness: 160, damping: 28, mass: 1.1 }}>
-                    <div style={{ width: "100%", height: "100%", background: "#07070f", border: "1px solid rgba(255,255,255,0.08)", borderRadius: "20px", overflow: "hidden", position: "relative" }}>
-                      <SlideVideo
-                        key={isActive ? `d-active-${active}` : `d-idle-${i}`}
-                        src={slide.video}
-                        isActive={isActive}
-                        onComplete={isActive ? handleComplete : undefined}
-                      />
-                      {isActive && (
-                        <div style={{ position: "absolute", bottom: 0, left: 0, right: 0, height: "3px", background: "rgba(255,255,255,0.07)" }}>
-                          <div style={{ height: "100%", width: `${progress}%`, background: "#7b5fe0", transition: "width 0.04s linear" }} />
+
+                    <div style={{ width: "100%", height: "100%", background: "#0e0e14", border: "1px solid rgba(255,255,255,0.08)", borderRadius: "20px", display: "grid", gridTemplateColumns: "44% 56%", overflow: "hidden" }}>
+
+                      {/* ── Left: text panel ── */}
+                      <div style={{ padding: "clamp(18px, 2.5vw, 36px)", display: "flex", flexDirection: "column", justifyContent: "space-between", borderRight: "1px solid rgba(255,255,255,0.05)" }}>
+                        {/* Top: tag + heading + body */}
+                        <div style={{ display: "flex", flexDirection: "column", gap: "clamp(8px, 1vw, 12px)" }}>
+                          <span style={{ fontFamily: "var(--font-inter), sans-serif", fontWeight: 600, fontSize: "clamp(9px, 0.75vw, 11px)", letterSpacing: "0.1em", textTransform: "uppercase", color: "#a484e0" }}>
+                            {slide.tag}
+                          </span>
+                          <h3 style={{ fontFamily: "var(--font-inter), sans-serif", fontWeight: 700, fontSize: "clamp(17px, 2.5vw, 36px)", color: "#f4f4f5", lineHeight: 1.15, margin: 0, hyphens: "none" as "none" }}>
+                            {slide.heading}
+                          </h3>
+                          <p style={{ fontFamily: "var(--font-inter), sans-serif", fontWeight: 500, fontSize: "clamp(11px, 1.11vw, 16px)", color: "#7a8895", lineHeight: 1.6, margin: 0, hyphens: "none" as "none" }}>
+                            {slide.body}
+                          </p>
                         </div>
-                      )}
+                        {/* Bottom: note box + progress bar */}
+                        <div style={{ display: "flex", flexDirection: "column", gap: "10px" }}>
+                          <div style={{ background: "rgba(123,95,224,0.13)", borderLeft: "3px solid #7b5fe0", borderRadius: "0 8px 8px 0", padding: "9px 12px" }}>
+                            <p style={{ fontFamily: "var(--font-inter), sans-serif", fontWeight: 500, fontSize: "clamp(9px, 0.83vw, 12px)", color: "#c4b5f7", lineHeight: 1.5, margin: 0, hyphens: "none" as "none" }}>
+                              {slide.note}
+                            </p>
+                          </div>
+                          <div style={{ height: "2px", background: "rgba(255,255,255,0.07)", borderRadius: "2px", overflow: "hidden" }}>
+                            {isActive && <div style={{ height: "100%", width: `${progress}%`, background: "#7b5fe0", transition: "width 0.04s linear" }} />}
+                          </div>
+                        </div>
+                      </div>
+
+                      {/* ── Right: video panel ── */}
+                      <div style={{ background: "#060609", padding: "14px", overflow: "hidden", display: "flex", alignItems: "stretch" }}>
+                        <div style={{ flex: 1, borderRadius: "12px", border: "1px solid rgba(255,255,255,0.08)", overflow: "hidden" }}>
+                          <SlideVideo
+                            key={isActive ? `d-active-${active}` : `d-idle-${i}`}
+                            src={slide.video}
+                            isActive={isActive}
+                            onComplete={isActive ? handleComplete : undefined}
+                          />
+                        </div>
+                      </div>
+
                     </div>
                   </motion.div>
                 );

@@ -164,14 +164,14 @@ export default function ComparisonSection() {
 
         {/* ── Header ── */}
         <div style={{ marginBottom: "clamp(44px, 5.5vw, 72px)" }}>
-          <span style={{ display: "block", fontFamily: "var(--font-inter), sans-serif", fontWeight: 600, fontSize: "clamp(10px, 0.85vw, 12px)", letterSpacing: "0.13em", textTransform: "uppercase", color: "#a484e0", marginBottom: "16px" }}>
+          <span style={{ display: "block", fontFamily: "var(--font-inter), sans-serif", fontWeight: 600, fontSize: "clamp(12px, 1.25vw, 18px)", letterSpacing: "6px", textTransform: "uppercase", color: "#a484e0", marginBottom: "16px" }}>
             The Case Journey
           </span>
-          <h2 style={{ fontFamily: "var(--font-jakarta), sans-serif", fontWeight: 800, fontSize: "clamp(28px, 3.8vw, 54px)", color: "#f4f4f5", lineHeight: 1.1, margin: "0 0 16px" }}>
+          <h2 style={{ fontFamily: "var(--font-inter), sans-serif", fontWeight: 800, fontSize: "clamp(26px, 3.33vw, 48px)", color: "#f4f4f5", lineHeight: 1.1, margin: "0 0 16px" }}>
             One file, five stages, an agent at{" "}
-            <em className="serif-em">each stage.</em>
+            <em className="serif-em" style={{ color: "#eae0fd" }}>each stage.</em>
           </h2>
-          <p style={{ fontFamily: "var(--font-inter), sans-serif", fontSize: "clamp(14px, 1.05vw, 17px)", color: "#7a8895", lineHeight: 1.7, maxWidth: "780px", margin: 0 }}>
+          <p style={{ fontFamily: "var(--font-inter), sans-serif", fontWeight: 400, fontSize: "clamp(14px, 2.22vw, 32px)", color: "#9eaebb", lineHeight: 1.38, maxWidth: "780px", margin: 0 }}>
             Piace tracks your personal injury files from first contact to settlement check, actively
             processing medical records, organizing evidence and drafting required documents.
           </p>
@@ -211,19 +211,19 @@ export default function ComparisonSection() {
                     <span style={{ fontFamily: "var(--font-serif-accent), serif", fontStyle: "italic", fontSize: isMobile ? "18px" : "clamp(16px, 1.4vw, 22px)", color: isActive ? "#a484e0" : "#444", lineHeight: 1 }}>
                       {s.n}
                     </span>
-                    <span style={{ fontFamily: "var(--font-inter), sans-serif", fontWeight: 700, fontSize: isMobile ? "10px" : "clamp(9px, 0.7vw, 11px)", letterSpacing: "0.13em", textTransform: "uppercase", color: isActive ? "#a484e0" : "#444" }}>
+                    <span style={{ fontFamily: "var(--font-inter), sans-serif", fontWeight: 600, fontSize: isMobile ? "12px" : "clamp(12px, 1.25vw, 18px)", letterSpacing: "6px", textTransform: "uppercase", color: isActive ? "#eae0fd" : "#444" }}>
                       •{s.label}
                     </span>
                   </div>
 
                   {/* Heading — size animates between active/inactive */}
                   <p style={{
-                    fontFamily: "var(--font-jakarta), sans-serif",
-                    fontWeight: isActive ? 800 : 400,
+                    fontFamily: "var(--font-inter), sans-serif",
+                    fontWeight: isActive ? 600 : 400,
                     fontSize: isMobile
-                      ? (isActive ? "17px" : "14px")
-                      : (isActive ? "clamp(15px, 1.4vw, 21px)" : "clamp(13px, 1.0vw, 15px)"),
-                    color: isActive ? "#f4f4f5" : "#777",
+                      ? (isActive ? "18px" : "14px")
+                      : (isActive ? "clamp(16px, 2.1vw, 30px)" : "clamp(13px, 1.1vw, 16px)"),
+                    color: isActive ? "#d5e0ea" : "#777",
                     lineHeight: 1.35,
                     margin: 0,
                     transition: "font-size 0.35s ease, font-weight 0.2s, color 0.35s ease",
@@ -240,7 +240,7 @@ export default function ComparisonSection() {
                         animate={{ opacity: 1, height: "auto", marginTop: 10 }}
                         exit={{ opacity: 0, height: 0, marginTop: 0 }}
                         transition={{ duration: 0.42, ease: [0.22, 1, 0.36, 1] }}
-                        style={{ fontFamily: "var(--font-inter), sans-serif", fontSize: isMobile ? "13px" : "clamp(12px, 0.88vw, 14px)", color: "#7a8895", lineHeight: 1.7, margin: 0, overflow: "hidden" }}
+                        style={{ fontFamily: "var(--font-inter), sans-serif", fontWeight: 500, fontSize: isMobile ? "13px" : "clamp(13px, 1.11vw, 16px)", color: "#7a8895", lineHeight: 1.7, margin: 0, overflow: "hidden" }}
                       >
                         {s.desc}
                       </motion.p>
@@ -287,7 +287,7 @@ export default function ComparisonSection() {
                 </div>
 
                 {/* Title */}
-                <h3 style={{ fontFamily: "var(--font-jakarta), sans-serif", fontWeight: 800, fontSize: isMobile ? "20px" : "clamp(20px, 2vw, 28px)", color: "#f4f4f5", margin: "0 0 20px", lineHeight: 1.2 }}>
+                <h3 style={{ fontFamily: "var(--font-inter), sans-serif", fontWeight: 800, fontSize: isMobile ? "20px" : "clamp(20px, 2vw, 28px)", color: "#f4f4f5", margin: "0 0 20px", lineHeight: 1.2 }}>
                   {card.title}
                 </h3>
 

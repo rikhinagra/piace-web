@@ -56,9 +56,9 @@ function TrustCard({ title, desc }: { title: string; desc: string }) {
         </div>
         <h3
           style={{
-            fontFamily: "var(--font-jakarta), sans-serif",
+            fontFamily: "var(--font-inter), sans-serif",
             fontWeight: 700,
-            fontSize: "clamp(15px, 1.4vw, 19px)",
+            fontSize: "clamp(15px, 1.53vw, 22px)",
             color: "#f4f4f5",
             margin: 0,
           }}
@@ -69,9 +69,10 @@ function TrustCard({ title, desc }: { title: string; desc: string }) {
       <p
         style={{
           fontFamily: "var(--font-inter), sans-serif",
-          fontSize: "clamp(13px, 1.05vw, 15px)",
+          fontWeight: 400,
+          fontSize: "clamp(14px, 1.25vw, 18px)",
           color: "#8a93a6",
-          lineHeight: 1.65,
+          lineHeight: 1.78,
           margin: 0,
         }}
       >
@@ -217,8 +218,8 @@ export default function TrustSection() {
               display: "block",
               fontFamily: "var(--font-inter), sans-serif",
               fontWeight: 600,
-              fontSize: "clamp(10px, 0.85vw, 12px)",
-              letterSpacing: "0.16em",
+              fontSize: "clamp(12px, 1.25vw, 18px)",
+              letterSpacing: "6px",
               textTransform: "uppercase",
               color: "#a484e0",
               marginBottom: "20px",
@@ -228,16 +229,17 @@ export default function TrustSection() {
           </span>
           <h2
             style={{
-              fontFamily: "var(--font-jakarta), sans-serif",
+              fontFamily: "var(--font-inter), sans-serif",
               fontWeight: 800,
-              fontSize: "clamp(28px, 4.5vw, 58px)",
+              fontSize: "clamp(26px, 3.33vw, 48px)",
               color: "#f4f4f5",
               lineHeight: 1.05,
+              letterSpacing: "-1.8px",
               margin: 0,
             }}
           >
             Your files. Your firm.{" "}
-            <em className="serif-em">No exceptions.</em>
+            <em className="serif-em" style={{ color: "#eae0fd" }}>No exceptions.</em>
           </h2>
         </div>
 

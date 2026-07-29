@@ -28,8 +28,8 @@ export default function BookSection() {
                 display: "block",
                 fontFamily: "var(--font-inter), sans-serif",
                 fontWeight: 600,
-                fontSize: "clamp(10px, 0.85vw, 12px)",
-                letterSpacing: "0.16em",
+                fontSize: "clamp(12px, 1.25vw, 18px)",
+                letterSpacing: "6px",
                 textTransform: "uppercase",
                 color: "#a484e0",
                 marginBottom: "18px",
@@ -40,25 +40,27 @@ export default function BookSection() {
 
             <h2
               style={{
-                fontFamily: "var(--font-jakarta), sans-serif",
+                fontFamily: "var(--font-inter), sans-serif",
                 fontWeight: 800,
-                fontSize: "clamp(26px, 3.2vw, 44px)",
+                fontSize: "clamp(26px, 3.33vw, 48px)",
                 color: "#f4f4f5",
                 lineHeight: 1.1,
+                letterSpacing: "-1.5px",
                 margin: "0 0 clamp(16px, 2vw, 24px)",
               }}
             >
               Picture a workday{" "}
-              <em className="serif-em">without</em>{" "}
+              <em className="serif-em" style={{ color: "#eae0fd" }}>without</em>{" "}
               the bottlenecks.
             </h2>
 
             <p
               style={{
                 fontFamily: "var(--font-inter), sans-serif",
-                fontSize: "clamp(14px, 1.2vw, 17px)",
-                color: "#7a8895",
-                lineHeight: 1.7,
+                fontWeight: 400,
+                fontSize: "clamp(14px, 2.22vw, 32px)",
+                color: "#9eaebb",
+                lineHeight: 1.38,
                 margin: "0 0 clamp(24px, 3vw, 36px)",
                 maxWidth: "52ch",
               }}
@@ -76,7 +78,9 @@ export default function BookSection() {
                     alignItems: "center",
                     gap: "12px",
                     fontFamily: "var(--font-inter), sans-serif",
-                    fontSize: "clamp(13px, 1.1vw, 15px)",
+                    fontWeight: 400,
+                    fontSize: "clamp(13px, 1.39vw, 20px)",
+                    lineHeight: 1.6,
                     color: "#c9d4de",
                   }}
                 >
@@ -122,9 +126,9 @@ export default function BookSection() {
           >
             <p
               style={{
-                fontFamily: "var(--font-jakarta), sans-serif",
+                fontFamily: "var(--font-inter), sans-serif",
                 fontWeight: 700,
-                fontSize: "clamp(17px, 1.6vw, 22px)",
+                fontSize: "clamp(16px, 1.25vw, 18px)",
                 color: "#f4f4f5",
                 margin: "0 0 clamp(20px, 2.5vw, 28px)",
               }}
