@@ -51,7 +51,7 @@ export default function Hero() {
           <Reveal delay={100}>
             <h1
               className="jakarta"
-              style={{ marginBottom: "clamp(32px, 3vw, 44px)" }}
+              style={{ marginBottom: "20px" }}
             >
               More time to practice <em className="serif-em">law</em>
               <br />PiAce runs the rest of the case
