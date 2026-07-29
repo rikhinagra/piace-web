@@ -1,6 +1,7 @@
 import type { Metadata, Viewport } from "next";
-import { Inter, Instrument_Serif } from "next/font/google";
+import { Inter, Instrument_Serif, Plus_Jakarta_Sans } from "next/font/google";
 import { GoogleTagManager } from "@next/third-parties/google";
+import ScrollToTop from "@/components/SmoothScroll";
 import "./globals.css";
 
 const SITE_URL = "https://www.piace.ai";
@@ -15,6 +16,12 @@ const instrumentSerif = Instrument_Serif({
   subsets: ["latin"],
   weight: "400",
   style: ["normal", "italic"],
+});
+
+const plusJakartaSans = Plus_Jakarta_Sans({
+  variable: "--font-jakarta",
+  subsets: ["latin"],
+  weight: ["400", "500", "600", "700", "800"],
 });
 
 const TITLE = "PIace | AI-native case management for personal injury firms";
@@ -87,16 +94,9 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en" className={`${inter.variable} ${instrumentSerif.variable}`}>
-      <head>
-        <link rel="preconnect" href="https://api.fontshare.com" />
-        <link
-          href="https://api.fontshare.com/v2/css?f[]=satoshi@300,400,500,700&display=swap"
-          rel="stylesheet"
-        />
-      </head>
+    <html lang="en" className={`${inter.variable} ${instrumentSerif.variable} ${plusJakartaSans.variable}`}>
       <GoogleTagManager gtmId="GTM-KTGH9WRC" />
-      <body>
+      <body suppressHydrationWarning>
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{
@@ -136,6 +136,7 @@ export default function RootLayout({
             }),
           }}
         />
+        <ScrollToTop />
         {children}
       </body>
     </html>

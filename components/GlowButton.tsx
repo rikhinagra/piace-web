@@ -8,8 +8,8 @@ export default function GlowButton({
   children: ReactNode;
 }) {
   return (
-    <a className="glow-btn" href={href}>
-      <span className="inner">{children}</span>
+    <a className="glow-btn" href={href} style={{ alignSelf: "stretch" }}>
+      <span className="inner" style={{ flex: 1, justifyContent: "center" }}>{children}</span>
     </a>
   );
 }

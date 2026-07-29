@@ -1,14 +1,13 @@
 import CursorGlow from "@/components/CursorGlow";
 import Navbar from "@/components/Navbar";
 import Hero from "@/components/Hero";
-import ProductSection from "@/components/ProductSection";
-import IntegrateSection from "@/components/IntegrateSection";
-import FeatureSection from "@/components/FeatureSection";
-import MigrationBand from "@/components/MigrationBand";
-import DemoSection from "@/components/DemoSection";
-import Faq from "@/components/Faq";
+import CarouselSection from "@/components/CarouselSection";
+import ComparisonSection from "@/components/ComparisonSection";
+import PainSection from "@/components/PainSection";
+import TrustSection from "@/components/TrustSection";
 import BookSection from "@/components/BookSection";
 import Footer from "@/components/Footer";
+import ScrollReveal from "@/components/ScrollReveal";
 
 export default function Home() {
   return (
@@ -17,14 +16,11 @@ export default function Home() {
       <Navbar />
       <main>
         <Hero />
-        <ProductSection />
-        <IntegrateSection />
-        <FeatureSection />
-        <MigrationBand />
-        <DemoSection />
-        <Faq />
-        <BookSection />
-        <div className="page-end-glow" aria-hidden="true" />
+        <ScrollReveal><CarouselSection /></ScrollReveal>
+        <ScrollReveal><ComparisonSection /></ScrollReveal>
+        <ScrollReveal><PainSection /></ScrollReveal>
+        <ScrollReveal><TrustSection /></ScrollReveal>
+        <ScrollReveal><BookSection /></ScrollReveal>
       </main>
       <Footer />
     </>
