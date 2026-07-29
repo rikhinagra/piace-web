@@ -173,6 +173,15 @@ export default function BookSection() {
                       fontSize: "14px",
                       outline: "none",
                       boxSizing: "border-box",
+                      transition: "border-color 0.2s, box-shadow 0.2s",
+                    }}
+                    onFocus={(e) => {
+                      e.currentTarget.style.borderColor = "rgba(123,95,224,0.8)";
+                      e.currentTarget.style.boxShadow = "0 0 0 3px rgba(123,95,224,0.18)";
+                    }}
+                    onBlur={(e) => {
+                      e.currentTarget.style.borderColor = "rgba(255,255,255,0.1)";
+                      e.currentTarget.style.boxShadow = "none";
                     }}
                   />
                 </div>
@@ -212,6 +221,15 @@ export default function BookSection() {
                     backgroundRepeat: "no-repeat",
                     backgroundPosition: "right 14px center",
                     paddingRight: "36px",
+                    transition: "border-color 0.2s, box-shadow 0.2s",
+                  }}
+                  onFocus={(e) => {
+                    e.currentTarget.style.borderColor = "rgba(123,95,224,0.8)";
+                    e.currentTarget.style.boxShadow = "0 0 0 3px rgba(123,95,224,0.18)";
+                  }}
+                  onBlur={(e) => {
+                    e.currentTarget.style.borderColor = "rgba(255,255,255,0.1)";
+                    e.currentTarget.style.boxShadow = "none";
                   }}
                 >
                   <option>Under 25 cases</option>
