@@ -116,8 +116,8 @@ const stages: Stage[] = [
 ];
 
 // Slow, smooth card swap — same feel as the carousel spring
-const CARD_TRANSITION = { duration: 0.65, ease: [0.22, 1, 0.36, 1] };
-const STAGE_TRANSITION = { duration: 0.45, ease: [0.22, 1, 0.36, 1] };
+const CARD_TRANSITION = { duration: 0.65, ease: [0.22, 1, 0.36, 1] as const };
+const STAGE_TRANSITION = { duration: 0.45, ease: [0.22, 1, 0.36, 1] as const };
 
 export default function ComparisonSection() {
   const [active, setActive] = useState(0);
