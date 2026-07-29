@@ -1,13 +1,22 @@
 "use client";
 
 import { motion } from "framer-motion";
+import { useEffect, useState } from "react";
 
 export default function ScrollIndicator() {
+  const [visible, setVisible] = useState(true);
+
+  useEffect(() => {
+    const onScroll = () => setVisible(window.scrollY < 50);
+    window.addEventListener("scroll", onScroll, { passive: true });
+    return () => window.removeEventListener("scroll", onScroll);
+  }, []);
+
   return (
     <motion.div
       initial={{ opacity: 0 }}
-      animate={{ opacity: 1 }}
-      transition={{ duration: 1, delay: 1.4 }}
+      animate={{ opacity: visible ? 1 : 0 }}
+      transition={{ duration: 1, delay: visible ? 1.4 : 0 }}
       style={{
         position: "absolute",
         bottom: "36px",
@@ -54,7 +63,7 @@ export default function ScrollIndicator() {
           fontFamily: "var(--font-inter), sans-serif",
           fontSize: "9px",
           letterSpacing: "0.22em",
-          color: "rgba(255,255,255,0.3)",
+          color: "rgba(255,255,255,0.7)",
           textTransform: "uppercase",
         }}
       >
