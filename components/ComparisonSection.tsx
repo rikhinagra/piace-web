@@ -97,11 +97,11 @@ export default function ComparisonSection() {
           display: "grid",
           gridTemplateColumns: isMobile ? "1fr" : isTablet ? "1fr 1.2fr" : "1fr 1.35fr",
           gap: isMobile ? "32px" : isTablet ? "32px" : "clamp(36px, 5vw, 80px)",
-          alignItems: "start",
+          alignItems: isMobile ? "start" : "stretch",
         }}>
 
           {/* ── Left: stage list — order 2 on mobile so video shows first ── */}
-          <div style={{ display: "flex", flexDirection: "column", order: isMobile ? 2 : 1 }}>
+          <div style={{ display: "flex", flexDirection: "column", order: isMobile ? 2 : 1, height: isMobile ? "auto" : "100%", justifyContent: isMobile ? "flex-start" : "space-between" }}>
             {stages.map((s, i) => {
               const isActive = i === active;
               return (
@@ -115,7 +115,7 @@ export default function ComparisonSection() {
                   transition={STAGE_TRANSITION}
                   style={{
                     paddingLeft: isMobile ? "16px" : "22px",
-                    paddingBottom: "24px",
+                    paddingBottom: isMobile ? "24px" : "0",
                     paddingTop: "2px",
                     cursor: "pointer",
                     borderLeft: "2px solid",
