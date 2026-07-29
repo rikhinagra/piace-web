@@ -1700,7 +1700,11 @@ footer {
   font-size: clamp(12px, 1.4vw, 20px);
   letter-spacing: 0.06em;
   margin-bottom: 28px;
-  color: #a484e0;
+  background: linear-gradient(90deg, #4c8dff 0%, #c084fc 50%, #38bdf8 100%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  -webkit-text-fill-color: transparent;
 }
 
 .hero h1.jakarta {

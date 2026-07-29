@@ -15,7 +15,18 @@ export default function Hero() {
       <Starfield />
       <div className="wrap" style={{ position: "relative" }}>
         <Reveal>
-          <p className="hero-eyebrow-new">AI-NATIVE CASE MANAGEMENT</p>
+          <p
+            className="hero-eyebrow-new"
+            style={{
+              background: "linear-gradient(90deg, #4c8dff 0%, #c084fc 50%, #38bdf8 100%)",
+              WebkitBackgroundClip: "text",
+              backgroundClip: "text",
+              color: "transparent",
+              WebkitTextFillColor: "transparent",
+            }}
+          >
+            AI-NATIVE CASE MANAGEMENT
+          </p>
         </Reveal>
 
         <Reveal delay={100}>
