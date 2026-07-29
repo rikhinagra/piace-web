@@ -32,7 +32,7 @@ export default function Hero() {
         <Reveal delay={100}>
           <h1 className="jakarta">
             More time to practice <em className="serif-em">law</em>
-            <br />PiAce runs the rest of the file
+            <br />PiAce runs the rest of the case
           </h1>
         </Reveal>
 
@@ -45,9 +45,8 @@ export default function Hero() {
         </Reveal>
 
         <Reveal delay={260}>
-          <div className="hero-actions">
+          <div className="hero-actions" style={{ justifyContent: "center" }}>
             <GlowButton href="#book">Book a Walkthrough</GlowButton>
-            <a href="#product" className="btn-purple">See it work</a>
           </div>
           <p className="hero-migration-note">
             FREE MIGRATION  WE MOVE YOUR CASES, YOU KEEP PRACTICING
