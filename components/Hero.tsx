@@ -89,9 +89,27 @@ export default function Hero() {
       {/* ── Below fold: video + stats ── */}
       <div
         className="wrap"
-        style={{ paddingBottom: "clamp(52px, 6.5vw, 92px)" }}
+        style={{ paddingBottom: "clamp(52px, 6.5vw, 92px)", position: "relative" }}
       >
-        <Reveal delay={0}>
+        {/* Sun glow — floats above the video, matching backup branch .dash-glow */}
+        <div
+          aria-hidden="true"
+          style={{
+            position: "absolute",
+            top: "-340px",
+            left: "50%",
+            transform: "translateX(-50%)",
+            width: "125%",
+            height: "620px",
+            background: `
+              radial-gradient(26% 30% at 50% 62%, rgba(255,190,110,0.9) 0%, rgba(255,150,60,0.45) 45%, transparent 70%),
+              radial-gradient(45% 52% at 50% 72%, rgba(255,160,70,0.55) 0%, rgba(255,130,45,0.22) 40%, rgba(120,140,255,0.06) 60%, transparent 72%)
+            `,
+            filter: "blur(24px)",
+            pointerEvents: "none",
+            zIndex: 0,
+          }}
+        />
           <div className="hero-video-wrap">
             <div
               className="hero-video-box"
@@ -99,8 +117,9 @@ export default function Hero() {
                 borderRadius: "16px",
                 border: "1px solid rgba(123,95,224,0.35)",
                 boxShadow:
-                  "0 0 0 1px rgba(123,95,224,0.12), 0 8px 60px rgba(100,70,200,0.35), 0 0 120px rgba(100,70,200,0.18), 0 0 200px rgba(80,50,180,0.1)",
+                  "0 0 0 1px rgba(123,95,224,0.12), 0 8px 60px rgba(100,70,200,0.35), 0 30px 120px rgba(100,70,200,0.18), 0 40px 200px rgba(80,50,180,0.1)",
                 overflow: "hidden",
+                clipPath: "inset(-2px -500px -500px -500px round 16px)",
               }}
             >
               <video
@@ -172,7 +191,6 @@ export default function Hero() {
               ))}
             </div>
           </div>
-        </Reveal>
       </div>
     </section>
   );
