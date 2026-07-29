@@ -122,7 +122,7 @@ const STAGE_TRANSITION = { duration: 0.45, ease: [0.22, 1, 0.36, 1] };
 export default function ComparisonSection() {
   const [active, setActive] = useState(0);
   const [breakpoint, setBreakpoint] = useState<"mobile" | "tablet" | "desktop">("desktop");
-  const timerRef = useRef<ReturnType<typeof setInterval>>();
+  const timerRef = useRef<ReturnType<typeof setInterval> | undefined>(undefined);
 
   const startTimer = () => {
     clearInterval(timerRef.current);
