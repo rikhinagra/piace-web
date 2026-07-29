@@ -38,7 +38,7 @@ export default function Hero() {
 
         <Reveal delay={180}>
           <p className="sub-new">
-            Piace reads your records, drafts your demands, and watches your
+            PiAce reads your records, drafts your demands, and watches your
             deadlines so every case reaches you ready to work, not ready to
             start.
           </p>
