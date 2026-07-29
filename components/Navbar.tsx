@@ -13,7 +13,7 @@ export default function Navbar() {
         <a href="#platform" className="nav-link">Platform</a>
         <a href="#" className="nav-logo" aria-label="PIace home">
           {/* eslint-disable-next-line @next/next/no-img-element */}
-          <img src="/piace-logo.png" alt="PIace" />
+          <img src="/piace-logo.png" alt="PIace" style={{ height: "34px", width: "auto", display: "block" }} />
         </a>
         <a href="#journey" className="nav-link">How it Works</a>
       </nav>
