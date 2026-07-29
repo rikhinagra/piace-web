@@ -542,7 +542,7 @@ export default function CarouselSection() {
   const [active, setActive] = useState(0);
   const [progress, setProgress] = useState(0);
   const [isMobile, setIsMobile] = useState(false);
-  const progressIntervalRef = useRef<ReturnType<typeof setInterval>>();
+  const progressIntervalRef = useRef<ReturnType<typeof setInterval> | undefined>(undefined);
   const startRef = useRef(Date.now());
   const dragStartRef = useRef(0);
 
