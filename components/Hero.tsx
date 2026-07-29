@@ -40,7 +40,11 @@ export default function Hero() {
                 fontSize: "clamp(12px, 1.4vw, 20px)",
                 letterSpacing: "6px",
                 textTransform: "uppercase",
-                color: "#a484e0",
+                background: "linear-gradient(90deg, #4c8dff 0%, #c084fc 50%, #38bdf8 100%)",
+                WebkitBackgroundClip: "text",
+                backgroundClip: "text",
+                color: "transparent",
+                WebkitTextFillColor: "transparent",
                 marginBottom: "clamp(24px, 2.5vw, 32px)",
               }}
             >
