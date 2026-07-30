@@ -86,7 +86,7 @@ export default function ComparisonSection() {
             One file, five stages, an agent at{" "}
             <em className="serif-em" style={{ color: "#eae0fd" }}>each stage.</em>
           </h2>
-          <p style={{ fontFamily: "var(--font-inter), sans-serif", fontWeight: 400, fontSize: "clamp(14px, 2.22vw, 32px)", color: "#9eaebb", lineHeight: 1.38, maxWidth: "780px", margin: 0 }}>
+          <p style={{ fontFamily: "var(--font-inter), sans-serif", fontWeight: 400, fontSize: "clamp(14px, 2.22vw, 32px)", color: "#9eaebb", lineHeight: 1.38, margin: 0 }}>
             Piace tracks your personal injury files from first contact to settlement check, actively
             processing medical records, organizing evidence and drafting required documents.
           </p>
