@@ -50,7 +50,8 @@ export default function BookSection() {
               }}
             >
               Picture a workday{" "}
-              <em className="serif-em" style={{ color: "#eae0fd" }}>without</em>{" "}
+              <em className="serif-em" style={{ color: "#eae0fd" }}>without</em>
+              <br />
               the bottlenecks.
             </h2>
 
@@ -62,7 +63,6 @@ export default function BookSection() {
                 color: "#9eaebb",
                 lineHeight: 1.38,
                 margin: "0 0 clamp(24px, 3vw, 36px)",
-                maxWidth: "52ch",
               }}
             >
               Watch PiAce process your sample medical bills and records live.
@@ -81,7 +81,7 @@ export default function BookSection() {
                     fontWeight: 400,
                     fontSize: "clamp(13px, 1.39vw, 20px)",
                     lineHeight: 1.6,
-                    color: "#c9d4de",
+                    color: "#9eaebb",
                   }}
                 >
                   <span
