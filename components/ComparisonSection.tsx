@@ -15,10 +15,10 @@ const stages: Stage[] = [
     video: "/cj-01-intake.mp4",
   },
   {
-    n: "02", label: "DISCOVERY",
+    n: "02", label: "TREATMENT",
     heading: "You review the chronology. You don't build it.",
     desc: "Incoming medical bills and treatment sheets are processed on receipt. PiAce automatically logs codes, flags treatment gaps, and monitors your client's therapeutic progress.",
-    video: "/cj-02-discovery.mp4",
+    video: "/cj-02-treatment.mp4",
   },
   {
     n: "03", label: "DEMAND",
