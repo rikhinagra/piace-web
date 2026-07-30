@@ -97,14 +97,14 @@ export default function Hero() {
             </div>
             <p style={{
               fontFamily: "var(--font-inter), sans-serif",
-              fontSize: "14px",
               fontWeight: 400,
-              letterSpacing: "0.04em",
+              fontSize: "14px",
+              lineHeight: "18px",
               color: "#d2d6dc",
-              textTransform: "uppercase",
+              whiteSpace: "nowrap",
               marginTop: "clamp(12px, 1.5vw, 20px)",
             }}>
-              FREE MIGRATION  WE MOVE YOUR CASES, YOU KEEP PRACTICING
+              FREE MIGRATION WE MOVE YOUR CASES, YOU KEEP PRACTICING
             </p>
           </Reveal>
 
