@@ -2,18 +2,18 @@
 
 export default function Footer() {
   return (
-    <footer style={{ background: "#050508", borderTop: "1px solid rgba(255,255,255,0.07)" }}>
+    <footer style={{ background: "#050508", borderTop: "1px solid rgba(255,255,255,0.08)" }}>
       <div className="wrap">
 
         {/* ── Top row: logo+tagline left | links right ── */}
         <div
           style={{
             display: "flex",
-            alignItems: "flex-start",
+            alignItems: "center",
             justifyContent: "space-between",
             flexWrap: "wrap",
             gap: "24px",
-            padding: "clamp(32px, 4vw, 52px) 0 clamp(24px, 3vw, 36px)",
+            padding: "clamp(28px, 3.5vw, 52px) 0 clamp(16px, 2vw, 28px)",
           }}
         >
           {/* Left: logo + tagline */}
@@ -22,7 +22,7 @@ export default function Footer() {
             <img
               src="/piace-logo.png"
               alt="PIace"
-              style={{ height: "28px", width: "auto", display: "block", marginBottom: "10px" }}
+              style={{ height: "42px", width: "auto", display: "block", marginBottom: "12px" }}
             />
             <p
               style={{
@@ -31,6 +31,7 @@ export default function Footer() {
                 fontSize: "13px",
                 color: "#9d9da6",
                 margin: 0,
+                whiteSpace: "nowrap",
               }}
             >
               AI-native case management for PI firms
@@ -42,8 +43,7 @@ export default function Footer() {
             style={{
               display: "flex",
               alignItems: "center",
-              gap: "clamp(16px, 2.5vw, 32px)",
-              paddingTop: "4px",
+              gap: "24px",
             }}
           >
             {["Privacy Policy", "Terms of Service"].map((label) => (
@@ -51,10 +51,12 @@ export default function Footer() {
                 key={label}
                 href="#"
                 style={{
-                  fontFamily: "var(--font-inter), sans-serif",
-                  fontSize: "clamp(12px, 1vw, 14px)",
+                  fontFamily: "var(--font-jakarta), sans-serif",
+                  fontWeight: 400,
+                  fontSize: "13px",
                   color: "#9eaebb",
                   textDecoration: "none",
+                  whiteSpace: "nowrap",
                   transition: "color 0.2s",
                 }}
                 onMouseEnter={(e) => (e.currentTarget.style.color = "#f4f4f5")}
@@ -78,7 +80,7 @@ export default function Footer() {
             color: "#c5cbd3",
             textAlign: "center",
             margin: 0,
-            padding: "clamp(18px, 2.5vw, 28px) 0",
+            padding: "clamp(20px, 2.7vw, 40px) 0",
           }}
         >
           © 2026 PiAce, Inc. All rights reserved.
