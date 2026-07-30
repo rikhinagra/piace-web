@@ -57,7 +57,7 @@ export default function Hero() {
             <h1
               style={{
                 fontFamily: "var(--font-inter), sans-serif",
-                fontWeight: 800,
+                fontWeight: 700,
                 fontSize: "clamp(30px, 4.2vw, 60px)",
                 color: "#f4f4f5",
                 lineHeight: 1.06,
@@ -66,8 +66,8 @@ export default function Hero() {
                 margin: "0 auto 20px",
               }}
             >
-              More time to practice <em className="serif-em" style={{ color: "#eae0fd" }}>law</em>
-              <br />PiAce runs the rest of the case
+              More time to practice <em className="serif-em" style={{ color: "#eae0fd" }}>law.</em>
+              <br />PiAce runs the rest of the case.
             </h1>
           </Reveal>
 
@@ -79,14 +79,14 @@ export default function Hero() {
                 fontWeight: 400,
                 fontSize: "clamp(15px, 1.67vw, 24px)",
                 color: "#9eaebb",
-                lineHeight: 1.55,
+                lineHeight: 1.75,
                 maxWidth: "56ch",
                 margin: `0 auto clamp(52px, 5vw, 64px)`,
               }}
             >
               PiAce reads your records, drafts your demands, and watches your
               deadlines so every case reaches you ready to work, not ready to
-              start.
+              build.
             </p>
           </Reveal>
 
