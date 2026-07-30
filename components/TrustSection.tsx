@@ -23,20 +23,19 @@ function TrustCard({ title, desc }: { title: string; desc: string }) {
   return (
     <div
       style={{
-        background: "#0d0b16",
-        border: "1px solid rgba(255,255,255,0.09)",
-        borderRadius: "18px",
+        background: "rgba(19,19,24,0.5)",
+        border: "1px solid #1f1f2e",
+        borderRadius: "16px",
         padding: "clamp(20px, 2.2vw, 28px)",
       }}
     >
       <div style={{ display: "flex", alignItems: "center", gap: "12px", marginBottom: "12px" }}>
         <div
           style={{
-            width: "30px",
-            height: "30px",
-            borderRadius: "50%",
-            background: "rgba(16,185,129,0.13)",
-            border: "1px solid rgba(16,185,129,0.32)",
+            width: "32px",
+            height: "32px",
+            borderRadius: "16px",
+            background: "rgba(48,209,88,0.11)",
             display: "flex",
             alignItems: "center",
             justifyContent: "center",
@@ -71,7 +70,7 @@ function TrustCard({ title, desc }: { title: string; desc: string }) {
           fontFamily: "var(--font-inter), sans-serif",
           fontWeight: 400,
           fontSize: "clamp(14px, 1.25vw, 18px)",
-          color: "#8a93a6",
+          color: "#9eaebb",
           lineHeight: 1.78,
           margin: 0,
         }}
@@ -279,7 +278,7 @@ export default function TrustSection() {
             <OrbCenter />
 
             {/* Right */}
-            <div style={{ display: "flex", flexDirection: "column", gap: "clamp(14px, 1.8vw, 20px)" }}>
+            <div style={{ display: "flex", flexDirection: "column", gap: "clamp(20px, 3.33vw, 48px)" }}>
               <TrustCard
                 title="Role-based access"
                 desc="Your legal team sees exactly what their roles call for with granular access hierarchies."
