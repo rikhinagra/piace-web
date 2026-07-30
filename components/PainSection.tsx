@@ -40,10 +40,10 @@ export default function PainSection() {
           <span style={{ display: "block", fontFamily: "var(--font-inter), sans-serif", fontWeight: 600, fontSize: "clamp(12px, 1.25vw, 18px)", letterSpacing: "6px", textTransform: "uppercase", color: "#a484e0", marginBottom: "16px" }}>
             AI Handles Repetitive Work
           </span>
-          <h2 style={{ fontFamily: "var(--font-inter), sans-serif", fontWeight: 800, fontSize: "clamp(26px, 3.33vw, 48px)", color: "#f4f4f5", lineHeight: 1.1, margin: "0 0 20px" }}>
-            What if your team <em className="serif-em" style={{ color: "#eae0fd" }}>never</em> had to chase paperwork again?
+          <h2 style={{ fontFamily: "var(--font-inter), sans-serif", fontWeight: 800, fontSize: "clamp(26px, 3.33vw, 48px)", color: "#f4f4f5", lineHeight: 1.1, letterSpacing: "-1.5px", margin: "0 0 20px" }}>
+            What if your team <em className="serif-em" style={{ color: "#eae0fd" }}>never</em> had to chase{!isMobile && <br />} paperwork again?
           </h2>
-          <p style={{ fontFamily: "var(--font-inter), sans-serif", fontWeight: 400, fontSize: "clamp(14px, 2.22vw, 32px)", color: "#9eaebb", lineHeight: 1.38, maxWidth: "640px", margin: "0 auto" }}>
+          <p style={{ fontFamily: "var(--font-inter), sans-serif", fontWeight: 400, fontSize: "clamp(14px, 2.22vw, 32px)", color: "#9eaebb", lineHeight: 1.38, maxWidth: "760px", margin: "0 auto" }}>
             Here's what happens when you swap hours of manual reading for a pipeline that actually moves.
           </p>
         </div>
